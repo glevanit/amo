@@ -7,20 +7,17 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Install') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:\\Users\\Gukes\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip install -r requirements.txt'
             }
         }
-
         stage('Test') {
             steps {
-                bat 'python -m pytest -v'
+                bat '"C:\\Users\\Gukes\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest -v'
             }
         }
     }
-
     post {
         always {
             echo 'Pipeline finished'
